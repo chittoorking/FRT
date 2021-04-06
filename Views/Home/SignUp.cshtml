@@ -1,0 +1,124 @@
+﻿@model ELearningPortalMSAzureV1.ViewModels.SignUpViewModel
+
+@{
+    ViewData["Title"] = "Sign Up";
+    Layout = "~/Views/Shared/_GuestLayout.cshtml";
+}
+<div style="padding-top:100px">
+    <div class="register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="~/Images/ACEP_Logo_200by200.jpg" alt="" />
+                <h3>Welcome To the Best Learning Portal</h3>
+                <br />
+                <h6>Already Have an account?</h6>
+                <a asp-controller="Home" asp-action="Login"><input type="submit" name="" value="Login" /></a><br />
+            </div>
+            <div class="col-md-9 register-right">
+                <ul class="nav nav-pills" style="padding-left:500px; padding-top:20px">
+                    <li class="active"><a data-toggle="pill" href="#raLearner">Register As Learner</a></li>
+                    <li><a data-toggle="pill" href="#raTeacher">Register As Teacher</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="raLearner">
+                        <h3 class="register-heading">Apply as a Learner</h3>
+                        <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="SignUp">
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input asp-for="UserLearner.FirstName" type="text" class="form-control" placeholder="First Name *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input asp-for="UserLearner.LastName" type="text" class="form-control" placeholder="Last Name *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input asp-for="UserLearnerLoginDetails.Password" type="password" class="form-control" placeholder="Password *" value="" />
+                                    </div>
+                                    <div class="signupErrorValidationDiv" id="LearnerPasswordError"></div>
+                                    <div class="form-group">
+                                        <input asp-for="UserLearnerLoginDetails.ConfirmPassword" type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                                    </div>
+                                    <div class="signupErrorValidationDiv" id="LearnerConfirmPasswordError"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input asp-for="UserLearner.Email" class="form-control" placeholder="Your Email *" value="" />
+                                    </div>
+                                    <div class="signupErrorValidationDiv" id="LearnerEmailError"></div>
+                                    <div class="form-group">
+                                        <input asp-for="UserLearner.Phone" type="text" class="form-control" placeholder="Your Phone *" value="" />
+                                    </div>
+                                    <div class="signupErrorValidationDiv" id="LearnerPhoneError"></div>
+                                    <div class="form-group">
+                                        <select asp-for="UserLearnerLoginDetails.SecurityQuestion" class="form-control">
+                                            <option class="hidden" selected disabled>Please select your Sequrity Question</option>
+                                            <option>What is your Birthdate?</option>
+                                            <option>What is Your old Phone Number</option>
+                                            <option>What is your Pet Name?</option>
+                                        </select>
+                                    </div>
+                                    <div class="signupErrorValidationDiv" id="LearnerSecurityQuestionError"></div>
+                                    <div class="form-group">
+                                        <input asp-for="UserLearnerLoginDetails.SecurityAnswer" type="text" class="form-control" placeholder="Enter Your Answer *" value="" />
+                                    </div>
+                                    <input asp-for="UserRole" type="hidden" value="Learner" />
+                                    <input type="submit" class="btnRegister" value="Register" onclick="return IsValidLearnerDetails()" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="raTeacher">
+                        @*<div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">*@
+                        <h3 class="register-heading">Apply as a Teacher</h3>
+                        <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="SignUp">
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input asp-for="UserTeacher.FirstName" type="text" class="form-control" placeholder="First Name *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input asp-for="UserTeacher.LastName" type="text" class="form-control" placeholder="Last Name *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input asp-for="UserTeacher.Email" type="email" class="form-control" placeholder="Email *" value="" />
+                                    </div>
+                                    <div class="signupErrorValidationDiv" id="TeacherEmailError"></div>
+                                    <div class="form-group">
+                                        <input asp-for="UserTeacher.Phone" type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                                    </div>
+                                    <div class="signupErrorValidationDiv" id="TeacherPhoneError"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input asp-for="UserTeacherLoginDetails.Password" type="password" class="form-control" placeholder="Password *" value="" />
+                                    </div>
+                                    <div class="signupErrorValidationDiv" id="TeacherPasswordError"></div>
+                                    <div class="form-group">
+                                        <input asp-for="UserTeacherLoginDetails.ConfirmPassword" type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                                    </div>
+                                    <div class="signupErrorValidationDiv" id="TeacherConfirmPasswordError"></div>
+                                    <div class="form-group">
+                                        <select asp-for="UserTeacherLoginDetails.SecurityQuestion" class="form-control">
+                                            <option class="hidden" selected disabled>Please select your Sequrity Question</option>
+                                            <option>What is your Birthdate?</option>
+                                            <option>What is Your old Phone Number</option>
+                                            <option>What is your Pet Name?</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="signupErrorValidationDiv" id="TeacherSecurityQuestionError"></div>
+                                        <input asp-for="UserTeacherLoginDetails.SecurityAnswer" type="text" class="form-control" placeholder="Enter Your Answer *" value="" />
+                                    </div>
+                                    <input asp-for="UserRole" type="hidden" value="Teacher" />
+                                    <input type="submit" class="btnRegister" value="Register" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link href="~/Content/HomePage.css" rel="stylesheet" />

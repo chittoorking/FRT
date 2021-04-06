@@ -1,0 +1,69 @@
+﻿@model ELearningPortalMSAzureV1.ViewModels.TeacherUploadVideoViewModel
+
+@{
+    ViewData["Title"] = "Upload Video";
+    Layout = "_AddTutorialLayout.cshtml";
+}
+
+<div class="TeacherTutorialUploadedSuccessfullDiv" id="TeacherTutorialUploadedSuccessfullId" style="display:none"></div>
+
+<input asp-for="CourseIdOnPost" type="hidden" value="@Model.CourseIdOnPost">
+<input asp-for="UploadedTutorialNameOnPost" type="hidden" value="@Model.UploadedTutorialNameOnPost">
+
+<h3 style="padding-left:15px">Upload video</h3>
+<div class="col-md-6">
+    Select a course from the drowpdown list to upload a file
+    <div class="container">
+
+    </div>
+    <form class="form-horizontal" method="POST" enctype="multipart/form-data" asp-controller="Teacher" asp-action="TeacherUploadVideo">
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label">Select Course Name</label>
+                <div class="controls">
+                    <select asp-for="TutorialFile.CourseId" asp-items="@(new SelectList(Model.CourseList,"CourseId","CourseName"))"></select>
+                    <p class="help-block">Select a course for adding file</p>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Select Course Name</label>
+                <div class="controls">
+                    <div class="row">
+                        <div class="col-md-8" style="padding-left:30px">
+                            <div class="form-group TutorialFiles TutorialFilescolor">
+                                <input type="file"  name="FileData" class="form-control" multiple="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Name of the Tutorial</label>
+                <div class="controls">
+                    <input type="text" asp-for="TutorialFile.TutorialName" placeholder="" class="input-xlarge">
+                    <p class="help-block">Please provide the name of the Tutorial. Example Introduction to AI</p>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <input type="submit" class="btn btn-success" value="Save and Upload">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="col-md-2"></div>
+<div class="col-md-4" id="UploadedTutorialsInvisibile" style="display:none">
+    <h3>Uploaded Tutorials for the course</h3>
+    <table class="table table-striped" id="tblTopicsRight" border="1">
+        <thead>
+            <tr>
+                <th>Topic #</th>
+                <th>Topic Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div id="TopicsRightTableReplacementForNoData"></div>
+</div>

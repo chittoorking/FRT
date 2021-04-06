@@ -1,0 +1,23 @@
+﻿@using ELearningPortalMSAzureV1.Resources
+@model ELearningPortalMSAzureV1.Areas.Guest.ViewModels.GuestCourseViewModel
+
+@{
+    ViewData["Title"] = "Course Page";
+    Layout = "~/Views/Home/_GuestCourseLayout.cshtml";
+}
+
+<div class="col-md-4">
+    <img src="@Constants.DefaultImageNames.CoursePhotoSrcPath@Model.selectedCourseDetails.CourseImageFile.FileName" width="250px" height="220px" />
+</div>
+
+<div class="col-md-6">
+    <h1>@Model.selectedCourseDetails.CourseName</h1>
+</div>
+<div class="col-md-2">
+    <a asp-controller="Home" asp-action="SignUp"><button type="button" class="btn btn-primary btn-lg" style="background-color:cornflowerblue">Enroll Course</button></a>
+</div>
+<div class="row"></div>
+
+@Html.Partial("_StarRatingBlock", 4)
+
+<h3>@Model.selectedCourseDetails.CourseDescription</h3>

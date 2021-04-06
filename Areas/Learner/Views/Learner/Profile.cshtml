@@ -1,0 +1,130 @@
+﻿@using ELearningPortalMSAzureV1.Resources
+@model ELearningPortalMSAzureV1.Areas.Learner.ViewModels.LearnerProfileViewModel
+
+@{
+    if (Model.Users.UserRole == "Learner")
+    {
+        ViewData["Title"] = "Profile";
+        Layout = "_LearnerProfileLayout.cshtml";
+    }
+}
+
+@if (Model.IsLearnerProfileComplete)
+{
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <img src="@Constants.DefaultImageNames.UserPhotoSrcPath@Model.LearnerDetails.LearnerImageFile.FileName" width="180px" height="180px" style="align-content:center" />
+        <h2 style="text-align:left;color:cadetblue">@Model.Users.UserFullName.ToUpper()</h2>
+    </div>
+    <div class="row"></div>
+    <div class="col-md-6">
+        <div id="TestAbt" class="learnerProfile-Blocks row">
+            <div class="col-md-3">
+                <img src="~/Images/Learner/AboutMe.jpg" width="100" height="100" />
+            </div>
+            <div class="col-md-9">
+                <h4>@Model.LearnerDetails.AboutMeDescription</h4>
+            </div>
+        </div>
+        <div id="LearnerCityDetails" class="learnerProfile-Blocks row">
+            <div class="col-md-3">
+                <img src="~/Images/Learner/Location.png" width="100" height="100" />
+            </div>
+            <div class="col-md-9">
+                <h4>Current City: @Model.LearnerDetails.CurrentCity, @Model.LearnerDetails.CurrentState</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div id="LearnerExperience" class="learnerProfile-Blocks row">
+            <div class="col-md-3">
+                <img src="~/Images/Learner/Experience.jpg" width="100" height="100" />
+            </div>
+            <div class="col-md-9">
+                <h4>Current Profession: @Model.LearnerDetails.Currentprofession</h4>
+                <h4>Experience: @Model.LearnerDetails.Experience</h4>
+            </div>
+        </div>
+        <div id="LearnerQualification" class="learnerProfile-Blocks row">
+            <div class="col-md-3">
+                <img src="~/Images/Learner/Qualificaiton.png" width="100" height="100" />
+            </div>
+            <div class="col-md-9">
+                <h4>Qualification: @Model.LearnerDetails.HighestQualification</h4>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <form class="form-horizontal" method="POST" enctype="multipart/form-data" asp-controller="Learner" asp-action="SaveLearnerProfile">
+        @Html.HiddenFor(x => x.Users.UserId)
+        <fieldset>
+            <div class="row"></div>
+            <div class="col-md-6">
+                <div class="control-group">
+                    <label class="control-label">Photo</label>
+                    <div class="controls">
+                        <input type="file" asp-for="LearnerDetails.LearnerImageFile" placeholder="" class="input-xlarge">
+                        <p class="help-block">Upload your Photo</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Current Profession</label>
+                    <div class="controls">
+                        <input type="text" asp-for="LearnerDetails.Currentprofession" placeholder="" class="input-xlarge">
+                        <p class="help-block">Enter the Current Job</p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Experience</label>
+                    <div class="controls">
+                        <input type="text" asp-for="LearnerDetails.Experience" placeholder="" class="input-xlarge">
+                        <p class="help-block">Please provide your Experience If any</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="control-group">
+                    <label class="control-label">Current City</label>
+                    <div class="controls">
+                        <input type="text" asp-for="LearnerDetails.CurrentCity" placeholder="" class="input-xlarge">
+                        <p class="help-block">Where are you currently staying</p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Current State</label>
+                    <div class="controls">
+                        <input type="text" asp-for="LearnerDetails.CurrentState" placeholder="" class="input-xlarge">
+                        <p class="help-block">Please provide the Name of the state for your current city</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Highest Qualification</label>
+                    <div class="controls">
+                        <input type="text" asp-for="LearnerDetails.HighestQualification" placeholder="" class="input-xlarge">
+                        <p class="help-block">Please enter the Highest Qualification</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="control-group">
+                    <label class="control-label">About Yourself</label>
+                    <div class="controls">
+                        <textarea asp-for="LearnerDetails.AboutMeDescription" placeholder="" rows="4" cols="90"></textarea>
+                        <p class="help-block">Tell Us Something About Yourself</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="control-group">
+                <div class="controls">
+                    <input type="submit" class="btn btn-success" value="Update Profile">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+}
+

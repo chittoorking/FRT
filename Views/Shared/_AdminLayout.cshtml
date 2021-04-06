@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("_HeadSection")
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-headerRow">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand " style="color:red; font-size:20px ">Azure Cloud based E-Learning Platform</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a asp-controller="Admin" asp-action="Dashboard" style="color:blue; font-size:20px">Dashboard</a></li>
+                <li><a asp-controller="Admin" asp-action="Profile" style="color:blue; font-size:20px">Profile</a></li>
+                <li><a asp-controller="Admin" asp-action="Courses" style="color:blue; font-size:20px">Course-Management</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a asp-controller="Home" asp-action="SignOut" style="color:blue; font-size:20px"><span class="glyphicon glyphicon-user"></span>Sign Out</a></li>
+            </ul>
+        </div>
+    </nav>
+        @RenderBody()
+    @Html.Partial("_FootSection")
+</body>
+</html>

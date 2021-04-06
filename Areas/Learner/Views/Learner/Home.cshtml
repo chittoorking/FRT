@@ -1,0 +1,26 @@
+﻿@model ELearningPortalMSAzureV1.Areas.Learner.ViewModels.LearnerHomePageViewModel
+
+@{
+    ViewData["Title"] = "Home";
+    if (Model.Users.UserRole == "Learner")
+    {
+        Layout = "~/Views/Shared/_LearnerLayout.cshtml";
+    }
+}
+
+
+<div class="LearnerHomeFindCoursesImage">
+    <div class="LearnerHomeContentDiv">
+        <h1 style="color:blue">Accelerate your future. Learn anytime, anywhere.</h1>
+
+        <a asp-controller="Learner" asp-action="FindCourses"><button type="button" class="btn btn-primary btn-lg" style="background-color:cornflowerblue">Find Courses</button></a>
+    </div>
+</div>
+
+
+
+@Html.Partial("~/Views/Shared/ModalPopups/_IncompleteProfilePopup.cshtml")
+
+<script>
+    var _Courses = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.CourseList));
+</script>

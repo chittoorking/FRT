@@ -1,0 +1,17 @@
+﻿@model ELearningPortalMSAzureV1.Models.Users
+
+@{
+    ViewData["Title"] = "Home Page";
+    if (Model.UserRole == "Learner")
+    {
+        Layout = "~/Views/Shared/_LearnerLayout.cshtml";
+    }
+    else if (Model.UserRole == "Admin")
+    {
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+}
+
+<h2>Home Page</h2>
+
+Hii @ViewData["result"]

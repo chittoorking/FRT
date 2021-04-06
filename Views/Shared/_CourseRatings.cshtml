@@ -1,0 +1,40 @@
+﻿@model ELearningPortalMSAzureV1.ViewModels.CourseRatingsPageViewModel
+
+@{ 
+    ViewData["Title"] = "Course Ratings";
+    if (Model.Users.UserRole == "Learner")
+    {
+        Layout = "~/Areas/Learner/Views/Learner/_LearnerCourseLayout.cshtml";
+    }
+    else if (Model.Users.UserRole == "Admin")
+    {
+        Layout = "~/Areas/Admin/Views/Admin/_AdminCourseManagementLayout.cshtml";
+    }
+    else if (Model.Users.UserRole == "Teacher")
+    {
+        Layout = "~/Areas/Teacher/Views/Teacher/_AddTutorialLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Home/_GuestCourseLayout.cshtml";
+    }
+}
+
+@foreach (var data in Model.courseRatingsList)
+{
+ <div class="col-md-9">   
+     <div class="row">
+         <div class="RatingCommentsBlocksRowWise">
+             <div class="col-md-3">
+                 <div class="RatedByUserProfileImage">@data.RatedByUserNameInitials</div>
+                 <h4>@data.RatedByUserFullName</h4>
+             </div>
+             <div class="col-md-9">
+                 @Html.Partial("_StarRatingBlock", data.Rating)<br/>
+                 <h5>@data.Comments</h5>
+                 <p style="font-size:10px">@data.CommentDateTime</p>
+             </div>
+         </div>
+     </div>
+   </div>
+}

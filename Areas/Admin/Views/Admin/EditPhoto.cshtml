@@ -1,0 +1,37 @@
+﻿@using ELearningPortalMSAzureV1.Resources
+@model ELearningPortalMSAzureV1.Areas.Admin.ViewModels.AdminProfileViewModel
+
+@{
+    ViewData["Title"] = "Edit Photo";
+    Layout = "_AdminProfileLayout.cshtml";
+}
+
+<h2>EditPhoto</h2>
+
+@if (Model.IsAdminProfileComplete)
+{
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <img src="@Constants.DefaultImageNames.UserPhotoSrcPath@Model.AdminDetails.AdminImageFile.FileName" width="180px" height="180px" style="align-content:center" />
+        <h2 style="text-align:left;color:cadetblue">@Model.Users.UserFullName.ToUpper()</h2>
+    </div>
+    <div class="row"></div>
+    <form class="form-horizontal" method="POST" enctype="multipart/form-data" asp-controller="Admin" asp-action="EditPhotoSave">
+        @Html.HiddenFor(x => x.Users.UserId)
+        <input type="hidden" asp-for="AdminDetails.AdminId">
+        <div class="control-group">
+            <label class="control-label">Photo</label>
+            <div class="controls">
+                <input type="file" asp-for="AdminDetails.AdminImageFile" placeholder="" class="input-xlarge">
+                <p class="help-block">Upload your Photo</p>
+            </div>
+        </div>
+        <br /><br /><br />
+                    <input type="submit" class="btn btn-success" value="Update Photo">
+    </form>
+}
+else
+{
+       Context.Response.Redirect("Profile");
+}
+

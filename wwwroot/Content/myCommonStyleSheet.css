@@ -1,0 +1,553 @@
+﻿/*Overwrite-Bootstrap Css Contents Start*/
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+pageFooter {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    color: black;
+    text-align: center;
+    font-size: large;
+}
+
+.login-input-text-pwd {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+.login-button {
+    background-color: deepskyblue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.indexImage {
+    background-image: url('../images/TrainingHome.jpg');
+    background-color: #cccccc;
+    height: 550px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.index-text {
+    text-align: left;
+    position: absolute;
+    top: 33%;
+    left: 35%;
+    transform: translate(-20%, -50%);
+    color: deeppink;
+}
+
+.index-joinNow {
+    background-color: orangered;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+}
+
+.navbar-headerRow {
+    background-color: aliceblue;
+    height: 80px;
+    position: fixed;
+    width:100%;
+    z-index:99;
+}
+
+.navbar-PortalName {
+    color: blue
+}
+/*copied code starts*/
+.register {
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    padding: 3%;
+}
+
+.register-left {
+    text-align: center;
+    color: #fff;
+    margin-top: 4%;
+}
+
+    .register-left input {
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2%;
+        width: 60%;
+        background: #f8f9fa;
+        font-weight: bold;
+        color: #383d41;
+        margin-top: 5;
+        margin-bottom: 3%;
+        cursor: pointer;
+    }
+
+.register-right {
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+}
+
+.register-left img {
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 35%;
+    -webkit-animation: mover 2s infinite alternate;
+    animation: mover 1s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+.register-left p {
+    font-weight: lighter;
+    padding: 12%;
+    margin-top: -9%;
+}
+
+.register .register-form {
+    padding: 10%;
+    margin-top: 10%;
+}
+
+.btnRegister {
+    float: right;
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+}
+
+.register .nav-tabs {
+    margin-top: 3%;
+    border: none;
+    background: #0062cc;
+    border-radius: 1.5rem;
+    width: 28%;
+    float: right;
+}
+
+    .register .nav-tabs .nav-link {
+        padding: 2%;
+        height: 34px;
+        font-weight: 600;
+        color: #fff;
+        border-top-right-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+    }
+
+        .register .nav-tabs .nav-link:hover {
+            border: none;
+        }
+
+        .register .nav-tabs .nav-link.active {
+            width: 100px;
+            color: #0062cc;
+            border: 2px solid #0062cc;
+            border-top-left-radius: 1.5rem;
+            border-bottom-left-radius: 1.5rem;
+        }
+
+.register-heading {
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+}
+/*copied code ends*/
+
+.loginPageMainDiv {
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    padding: 3%;
+}
+
+.login-left {
+    text-align: center;
+    color: #fff;
+    margin-top: 4%;
+}
+
+.login-right {
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+}
+
+.login-left img {
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 35%;
+    -webkit-animation: mover 2s infinite alternate;
+    animation: mover 1s infinite alternate;
+}
+.login-heading {
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+}
+.login-form {
+    padding: 10%;
+    padding-left: 30%;
+    margin-top: 10%;
+    width: 90%;
+}
+.login-left-btnSignup {
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #383d41;
+    margin-top: 5;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+.LearerHomePageCourseDiv{
+    border: inherit;
+    width: 420px;
+    padding-left:60px
+}
+
+.buttonLookLike-Hyperlink {
+    background: none !important;
+    color: #337ab7;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+    cursor: pointer;
+}
+.nav li a {
+    position: relative;
+    display: block;
+    padding: 5px 5px;
+    padding-top: 20px
+}
+.learnerProfile-Blocks {
+    position: inherit;
+    display: block;
+    /*padding-top: 20px;*/
+}
+/*.learnerProfile-Image-Left{
+    position: relative;
+    left:0;
+    display: block;
+    float: left;
+}
+.learnerProfile-Text-Right {
+    text-align:left;
+    right:0;
+    position: relative;
+    float: right;
+}*/
+.signupErrorValidationDiv{
+    color:red;    
+}
+
+.AddTutorial-Modules {
+    height: 150px;
+    width: 150px;
+    background-color: powderblue;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    font-size:30px;
+    line-height: 70px;
+}
+
+
+.NavCommonLeftSidePanel {
+    background-color: lightsteelblue;
+    width: 190px;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 101px;
+    transition: 0.5s;
+}
+.RenderDivHavingLeftPanel{
+    border: inherit;
+    width: 100%;
+    padding-left:250px;
+    padding-right:20px;
+    padding-top:100px;
+    position: relative;
+}
+.Profile-Form {
+    padding-left:200px
+}
+.TutorialFiles input {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    padding: 120px 0px 85px 35%;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+}
+
+    .TutorialFiles input:focus {
+        outline: 2px dashed #92b0b3;
+        outline-offset: -10px;
+        -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+        transition: outline-offset .15s ease-in-out, background-color .15s linear;
+        border: 1px solid #92b0b3;
+    }
+
+.TutorialFiles {
+    position: relative
+}
+
+    .TutorialFiles:after {
+        pointer-events: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 50px;
+        right: 0;
+        height: 56px;
+        content: "";
+        background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+        display: block;
+        margin: 0 auto;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+.TutorialFilescolor input {
+    background-color: #f1f1f1;
+}
+
+.TutorialFiles:before {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    content: " or drag it here. ";
+    display: block;
+    margin: 0 auto;
+    color: #2ea591;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+.TopicsRightTable {
+    table-layout: fixed;
+}
+.CourseBlocks
+{
+    height:250px;
+    border:none;
+    border-spacing:10px;
+}
+
+.starRatingChecked {
+    color: orange;
+}
+
+.CourseBlocksRowWise {
+    height: 130px;
+    border: none;
+    border-spacing: 10px;
+}
+.AboutUsCloudImage {
+    background-image: url('../images/AboutUsCloud_998_554.jpg');
+    background-color: #cccccc;
+    width: 1275px;
+    height: 530px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.AboutUsContentsDiv{
+    padding-top:200px;
+}
+
+.LearnerHomeContentDiv {
+    padding-top: 100px;
+    padding-left: 700px;
+}
+.LearnerHomeFindCoursesImage {
+    background-image: url('../images/FIndCoursesHomePage.png');
+    background-color: #cccccc;
+    width: 1275px;
+    height: 610px;
+    padding-top:100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.LearnerHomeContentDiv {
+    padding-top: 100px;
+    padding-left: 700px;
+}
+.TeacherHomeImage {
+    background-image: url('../images/TeacherHomePage.jpg');
+    background-color: #cccccc;
+    width: 1275px;
+    height: 610px;
+    padding-top: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.TeacherHomeContentDiv {
+    padding-top: 30px;
+}
+.commentBoxRatingForm {
+    background-color: #efefef;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.starFadeRatingForm {
+    background-image: url('../Images/RatingImages/StarFade.JPG');
+    width:80px;
+    height:80px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/*.starFadeNRatingForm {
+    background-image: url('/Images/StarFade.gif');
+    min-width: 30px;
+    min-height: 30px;
+    display: inline-block;
+}*/
+
+.starGlowRatingForm {
+    background-image: url('../Images/RatingImages/StarGlow.JPG');
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.starGlowNRatingForm {
+    background-image: url('../Images/RatingImages/StarGlow.JPG');
+    min-width: 30px;
+    min-height: 30px;
+    display: inline-block;
+}
+.RatingCommentsBlocksRowWise {
+    height: 130px;
+    border: groove;
+    border-spacing: 10px;
+}
+
+.RatedByUserProfileImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #512DA8;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    margin: 20px 0;
+}
+.FindCourseSerachBox {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.LearnerDashboardLinks {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background-color: deepskyblue;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 170px;
+    margin: 20px 0;
+}
+.DonateImageTopNav {
+    background-image: url('../images/icons/DonateImg.gif');
+    width: 100px;
+    height: 100px;
+}
+.DonatePageImage {
+    background-image: url('../Images/PoratalImages/Donate.jpg');
+    background-size: auto;
+    width: 250px;
+    height: 223px;
+    object-fit: fill;
+}
+.radioBtnDonationAmountClass .notActiveDonationAmount {
+    color: #3276b1;
+    background-color: #fff;
+}
+.playVideoModalDesign{
+    width:800px;
+}
+.imgInactiveCourses{
+    height:50px;
+    width: 200px;
+}
+.profileValidationDiv {
+    color: red;
+}
+.TeacherTutorialUploadedSuccessfullDiv {
+    width: 850px;
+    height: 30px;
+    border: 1px solid;
+    background-color:lightgreen;
+    font-size:medium;
+   font-weight:bold
+}

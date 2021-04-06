@@ -1,0 +1,51 @@
+﻿@model ELearningPortalMSAzureV1.ViewModels.TeacherAddUpdateCourseViewModel
+
+@{
+    ViewData["Title"] = "Update Course";
+    Layout = "_AddTutorialLayout.cshtml";
+}
+
+<h3>Update Course</h3>
+
+<form class="form-horizontal" method="POST" asp-controller="Teacher" asp-action="TeacherUpdateCourse">
+    <input type="hidden" asp-for="Course.CourseId">
+    <fieldset>
+        <div class="control-group">
+            <label class="control-label">Course Code</label>
+            <div class="controls">
+                <input type="text" asp-for="Course.CourseCode" placeholder="" class="input-xlarge">
+                <p class="help-block">Exampes of Course Code is SS-110 for Course Machine Learning</p>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Course Name</label>
+            <div class="controls">
+                <input type="text" asp-for="Course.CourseName" placeholder="" class="input-xlarge">
+                <p class="help-block">Please provide the name of the course. Example Artificial Intelligence</p>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Course Duration</label>
+            <div class="controls">
+                <input type="text" asp-for="Course.CourseDuration" placeholder="" class="input-xlarge">
+                <p class="help-block">Please provide the Duration of the Course Example '8 Hours'</p>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Description of the Course</label>
+            <div class="controls">
+                <textarea asp-for="Course.CourseDescription" placeholder="" rows="4" cols="90"></textarea>
+                <p class="help-block">Please give a description of the Course</p>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input type="submit" class="btn btn-success" value="Update Course">
+            </div>
+        </div>
+    </fieldset>
+</form>
+

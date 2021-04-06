@@ -1,0 +1,17 @@
+﻿@model ELearningPortalMSAzureV1.ViewModels.CommonViewModel
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<div class="TeacherHomeImage">
+    <div class="col-md-4 TeacherHomeContentDiv">
+        <h2 style="color:blue">“@Model.ScreenContent1”</h2>
+        <h3 style="color:blue">@Model.ScreenContent2</h3>
+
+        <div style="text-align:center">
+            <a asp-controller="Teacher" asp-action="TeacherAddCourse"><button type="button" class="btn btn-primary btn-lg" style="background-color:cornflowerblue">Add Courses</button></a>
+        </div>
+    </div>
+</div>

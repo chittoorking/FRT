@@ -1,0 +1,16 @@
+﻿@model ELearningPortalMSAzureV1.Areas.Learner.ViewModels.LearnerHomePageViewModel
+
+@{
+    ViewData["Title"] = "Enroll Course";
+    if (Model.Users.UserRole == "Learner")
+    {
+        Layout = "_LearnerCourseLayout.cshtml";
+    }
+}
+<div style="padding-top:100px">
+
+<h3>Thanks for Enrolling in the Course @Model.Enrollment.CourseName</h3>
+<h3>Your Enrollment Id is @Model.Enrollment.EnrollmentID</h3>
+<br/><br/>
+     <a asp-controller="Learner" asp-action="LearningPage" asp-route-CourseId=@Model.Enrollment.CourseId><h4>Click Here to Open the Course</h4></a>
+</div>

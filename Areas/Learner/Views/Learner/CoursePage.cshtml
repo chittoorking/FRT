@@ -1,0 +1,25 @@
+﻿@using ELearningPortalMSAzureV1.Resources
+@model ELearningPortalMSAzureV1.Areas.Learner.ViewModels.CoursePageViewModel
+
+@{
+    ViewData["Title"] = "Course Page";
+    Layout = "_LearnerCourseLayout.cshtml";
+}
+
+
+
+<div class="col-md-4">
+    <img src="@Constants.DefaultImageNames.CoursePhotoSrcPath@Model.Course.CourseImageFile.FileName" width="250px" height="220px" />
+</div>
+
+<div class="col-md-6">
+    <h1>@Model.Course.CourseName</h1>
+</div>
+<div class="col-md-2">
+    <a asp-controller="Learner" asp-action="EnrollCourse" asp-route-CourseId=@Model.Course.CourseId><button type="button" class="btn btn-primary btn-lg" style="background-color:cornflowerblue">Enroll Course</button></a>
+</div>
+<div class="row"></div>
+
+@Html.Partial("_StarRatingBlock", 4)
+
+<h3>@Model.Course.CourseDescription</h3>

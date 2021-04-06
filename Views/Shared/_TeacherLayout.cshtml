@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("_HeadSection")
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-headerRow">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand " style="color:red; font-size:20px ">Azure Cloud based E-Learning Platform</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a asp-controller="Teacher" asp-action="Home" style="color:blue; font-size:20px">Home</a></li>
+                <li><a asp-controller="Teacher" asp-action="Dashboard" style="color:blue; font-size:20px">Dashboard</a></li>
+                <li><a asp-controller="Teacher" asp-action="Profile" style="color:blue; font-size:20px">Profile</a></li>
+                <li><a asp-controller="Teacher" asp-action="AddTutorial" style="color:blue; font-size:20px">Add Tutorial</a></li>
+                <li><a asp-controller="Teacher" asp-action="AboutUs" style="color:blue; font-size:20px">About Us</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a asp-controller="Home" asp-action="SignOut" style="color:blue; font-size:20px"><span class="glyphicon glyphicon-user"></span>Sign Out</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+        @RenderBody()
+    </div>
+    @Html.Partial("_FootSection")
+    <script src="~/Scripts/TeacherScript.js"></script>
+</body>
+</html>

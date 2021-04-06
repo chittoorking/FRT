@@ -1,0 +1,34 @@
+﻿@model ELearningPortalMSAzureV1.ViewModels.DashboardViewModel
+@{
+    if (Model.Users.UserRole == "Learner")
+    {
+        ViewData["Title"] = "Learner Dashboard";
+        Layout = "~/Views/Shared/_LearnerLayout.cshtml";
+    }
+    else if (Model.Users.UserRole == "Admin")
+    {
+        ViewData["Title"] = "Admin Dashboard";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+    else if (Model.Users.UserRole == "Teacher")
+    {
+        ViewData["Title"] = "Teacher Dashboard";
+        Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_GuestLayout.cshtml";
+    }
+}
+
+<div class="container" style="padding-top:100px">
+
+<h2 style="color:palevioletred;text-align:center">@Model.DashboardHeader</h2>
+
+@foreach (var data in Model.ActionDetailsList)
+{
+    <div class="col-md-3">
+        <a asp-controller=@data.ControllerName asp-action=@data.ActionMethod style="color:blue; font-size:18px"><div class="LearnerDashboardLinks">@data.DisplayName</div></a>
+    </div>
+}
+</div>

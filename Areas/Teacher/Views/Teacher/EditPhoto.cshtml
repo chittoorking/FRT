@@ -1,0 +1,33 @@
+﻿@using ELearningPortalMSAzureV1.Resources
+@model ELearningPortalMSAzureV1.ViewModels.TeacherProfileViewModel
+
+@{
+    ViewData["Title"] = "Edit Photo";
+    Layout = "_TeacherProfileLayout.cshtml";
+}
+@if (Model.IsTeacherProfileComplete)
+{
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <img src="@Constants.DefaultImageNames.UserPhotoSrcPath@Model.TeacherDetails.TeacherImageFile.FileName" width="180px" height="180px" style="align-content:center" />
+        <h2 style="text-align:left;color:cadetblue">@Model.Users.UserFullName.ToUpper()</h2>
+    </div>
+    <div class="row"></div>
+    <form class="form-horizontal" method="POST" enctype="multipart/form-data" asp-controller="Teacher" asp-action="EditPhotoSave">
+        @Html.HiddenFor(x => x.Users.UserId)
+        <input type="hidden" asp-for="TeacherDetails.TeacherId">
+        <div class="control-group">
+            <label class="control-label">Photo</label>
+            <div class="controls">
+                <input type="file" asp-for="TeacherDetails.TeacherImageFile" placeholder="" class="input-xlarge">
+                <p class="help-block">Upload your Photo</p>
+            </div>
+        </div>
+        <br /><br /><br />
+        <input type="submit" class="btn btn-success" value="Update Photo">
+    </form>
+}
+else
+{
+    Context.Response.Redirect("Profile");
+}

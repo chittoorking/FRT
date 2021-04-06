@@ -1,0 +1,20 @@
+﻿@model ELearningPortalMSAzureV1.ViewModels.CommonViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_GuestLayout.cshtml";
+}
+
+<div style="padding-top:80px">
+    <div class="indexImage">
+        <div class="index-text">
+            <h2 style="font-size:40px">“@Model.ScreenContent1”</h2>
+            @*<button class="index-joinNow">Join Now</button>*@
+            <a asp-controller="Home" asp-action="SignUp"><button type="button" class="btn btn-primary btn-lg" style="background-color:orangered" >Join Now</button></a>
+        </div>
+    </div>
+    </div>
+
+
+
+<link href="~/Content/HomePage.css" rel="stylesheet" />

@@ -1,0 +1,31 @@
+﻿@using ELearningPortalMSAzureV1.Resources
+@model ELearningPortalMSAzureV1.ViewModels.CommonViewModel
+
+@{
+    ViewData["Title"] = "About Us";
+    if (Model.Users.UserRole == "Learner")
+    {
+        Layout = "~/Views/Shared/_LearnerLayout.cshtml";
+    }
+    else if (Model.Users.UserRole == "Admin")
+    {
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+    else if (Model.Users.UserRole == "Teacher")
+    {
+        Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_GuestLayout.cshtml";
+    }
+}
+<div  style="padding-top:80px">
+<div class="AboutUsCloudImage">
+    <div class="col-md-6 AboutUsContentsDiv">
+        <h2 style="color:white">
+            @Model.ScreenContent1
+        </h2>
+    </div>
+</div>
+</div>

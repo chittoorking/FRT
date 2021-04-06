@@ -1,0 +1,12 @@
+﻿@model List<string>
+
+    <nav class="navbar navbar-inverse NavCommonLeftSidePanel">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                @foreach (var actionDetails in Model){
+                var actionDetailsArray =actionDetails.Split("|");
+                <li><a asp-controller=@actionDetailsArray[0] asp-action=@actionDetailsArray[1] style="color:blue; font-size:18px">@actionDetailsArray[2]</a></li>
+                }
+            </ul>
+        </div>
+    </nav>

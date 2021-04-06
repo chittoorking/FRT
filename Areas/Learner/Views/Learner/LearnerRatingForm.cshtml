@@ -1,0 +1,53 @@
+﻿@model ELearningPortalMSAzureV1.Areas.Learner.ViewModels.LearnerRatingFormViewModel
+
+@{
+    ViewData["Title"] = "Rating Form";
+    Layout = "_LearnerCourseLayout.cshtml";
+}
+
+
+<div class="col-md-9">
+    <h1 style="color:cadetblue">How Would you Rate this Course</h1>
+
+    
+            <div class="commentBox">
+                <form class="form-horizontal" method="POST" enctype="multipart/form-data" asp-controller="Learner" asp-action="LearnerRatingFormSubmit">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <div id="StarRatingBlockDiv">
+                                    <span class="starFadeRatingForm" id="spanRating1"></span>
+                                    <span class="starFadeRatingForm" id="spanRating2"></span>
+                                    <span class="starFadeRatingForm" id="spanRating3"></span>
+                                    <span class="starFadeRatingForm" id="spanRating4"></span>
+                                    <span class="starFadeRatingForm" id="spanRating5"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <textarea asp-for="CourseRating.Comments" id="Comment" required rows="5" style="width:100%;" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input asp-for="CourseRating.CourseId" type="hidden" id="CourseId" value="@Model.CurrentCourse.CourseId" />
+                                <input asp-for="CourseRating.Rating" type="hidden" id="Rating" value="@Model.CourseRating.Rating" />
+                                <input asp-for="CourseRating.RatedByUserId" type="hidden" id="Rating" value="@Model.Users.UserId" />
+                                <input asp-for="CourseRating.CourseRatingId" type="hidden" id="Rating" value="@Model.CourseRating.CourseRatingId" />
+                                <input type="submit" id="btnRegister" name="btnRegister" value="Submit Comment" class="btn btn-warning" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+</div>
+<script>
+    //Added this script section for this page to perform some action on this page load As we have one common implemetaion for all Learner Screens
+    var setRating = $("#Rating").val();
+    for (var i = 1; i <= setRating; i++) {
+        $("#spanRating" + i).attr('class', 'starGlowRatingForm');
+    }
+
+</script>

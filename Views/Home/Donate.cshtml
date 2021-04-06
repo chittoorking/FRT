@@ -1,0 +1,51 @@
+﻿@model ELearningPortalMSAzureV1.ViewModels.CommonViewModel
+
+@{
+    ViewData["Title"] = "Donate";
+    Layout = "~/Views/Shared/_GuestLayout.cshtml";
+}
+<div style="padding-top:100px">
+<div class="col-md-6">
+
+    <h2 style="color:mediumvioletred">Help us to Do More</h2>
+    <div class="col-md-5">
+        <div class="DonatePageImage"></div>
+    </div>
+    <<div class="col-md-7">
+    <p style="font-size:17px">
+        <strong>
+            <i>
+                @Model.ScreenContent1
+            </i>
+        </strong>
+    </p>
+</div>
+</div>
+<div class="col-md-6">
+    <h3 style="color:blueviolet">Select an Amount</h3>
+    <div class="form-group">
+        <div class="input-group">
+            <div id="radioBtnDonationAmount" class="btn-group radioBtnDonationAmountClass">
+                <a class="btn btn-primary btn-lg activeDonationAmount" data-toggle="UserDonationAmount" id="DonationAmountButton10" data-title="10">$10</a>
+                <a class="btn btn-primary btn-lg notActiveDonationAmount" data-toggle="UserDonationAmount" id="DonationAmountButton25" data-title="25">$25</a>
+                <a class="btn btn-primary btn-lg notActiveDonationAmount" data-toggle="UserDonationAmount" id="DonationAmountButton50" data-title="50"> $50</a>
+                <a class="btn btn-primary btn-lg notActiveDonationAmount" data-toggle="UserDonationAmount" id="DonationAmountButton100" data-title="100"> $100</a>
+                <a class="btn btn-primary btn-lg notActiveDonationAmount" data-toggle="UserDonationAmount" data-title="UserOtherDonationBtn" id="DonationAmountButtonOther">Other</a>
+                <div class="col-sm-4"><a><input type="text" class="form-control input-lg" style="display:none" id="UserOtherDonationAmount" data-title="UserOtherDonationAmount" placeholder="Enter Amount"></a></div>
+            </div>
+            <input type="hidden" id="UserDonationAmount">
+        </div>
+    </div>
+    <h3 style="color:blueviolet">Enter Your Name</h3>
+    <div class="col-md-9"><input type="text" class="form-control input-lg"></div>
+    <div class="row"></div>
+    <h3 style="color:blueviolet">Enter Honoree's Name(Optional)</h3>
+    <div class="col-md-9"><input type="text" class="form-control input-lg"></div>
+    <div class="row"></div>
+    <br />
+    <a class="btn-primary btn-lg" href="javascript:window.open('https://www.ccavenue.com/', 'yourWindowName', 'width=600,height=650');">Donate by Credit Card</a>
+    &nbsp; &nbsp;
+    <a class="btn-primary btn-lg" href="javascript:window.open('https://www.paypal.com/', 'yourWindowName', 'width=600,height=650');">Donate by PayPal</a>
+
+</div>
+</div>

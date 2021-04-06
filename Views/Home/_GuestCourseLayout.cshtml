@@ -1,0 +1,9 @@
+﻿@{
+    Layout = "~/Views/Shared/_GuestLayout.cshtml";
+}
+
+@Html.Partial("_CommonLeftPanel", new List<string> { "Home|Courses|Courses" })
+
+<div class="RenderDivHavingLeftPanel">
+    @RenderBody()
+</div>

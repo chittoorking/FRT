@@ -1,0 +1,36 @@
+﻿@model ELearningPortalMSAzureV1.Models.UserLoginDetails
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_GuestLayout.cshtml";
+}
+
+<div class="loginPageMainDiv">
+    <div class="row">
+        <div class="col-md-3 login-left">
+            <img src="~/Images/ACEP_Logo_200by200.jpg" alt="" />
+            <h3>Welcome To the Best Learning Portal</h3>
+            <br />
+            <h6>Not Yet Registerd?</h6>
+            <a asp-controller="Home" asp-action="SignUp"><input type="submit" class="login-left-btnSignup" name="" value="Sign Up" /></a><br />
+        </div>
+        <div class="col-md-9 login-right">
+            <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Login">
+                <h2 class="login-heading">Login to your Account</h2>
+                <div class="row login-form">
+                    <label><b>Email Id or Phone</b></label>
+                    <input asp-for="UserLoginValue" type="text" class="login-input-text-pwd" placeholder="Enter Username" required>
+
+                    <label><b>Password</b></label>
+                    <input asp-for="Password" type="password" class="login-input-text-pwd" placeholder="Enter Password" required>
+
+                    <button type="submit" class="login-button">Login</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<link href="~/Content/HomePage.css" rel="stylesheet" />

@@ -1,0 +1,45 @@
+﻿@using ELearningPortalMSAzureV1.Resources
+@model ELearningPortalMSAzureV1.ViewModels.AddTutorialViewModel
+
+@{
+    ViewData["Title"] = "Courses";
+    Layout = "_AddTutorialLayout.cshtml";
+}
+
+@if (Model.CourseList.Count > 0)
+{
+    <h2> Courses Uploaded By You </h2>
+    @foreach (var data in Model.CourseList)
+    {
+        <div class="row">
+            <div class="col-md-3">
+                <a asp-controller="Teacher" asp-action="TutorialsPage" asp-route-CourseId=@data.CourseId> <img src="@Constants.DefaultImageNames.CoursePhotoSrcPath@data.CourseImageFile.FileName" width="250px" height="200px" /></a>
+            </div>
+            <div class="col-md-5 CourseBlocksRowWise">
+                <a asp-controller="Teacher" asp-action="TutorialsPage" asp-route-CourseId=@data.CourseId>
+                    <h4>@data.CourseName</h4>
+                </a>
+                @if (data.AverageCourseRating > 0)
+    {
+            <a asp-controller="Teacher" asp-action="CourseRatings" asp-route-CourseId=@data.CourseId>
+                @Html.Partial("_StarRatingBlock", Convert.ToInt32(data.AverageCourseRating))
+            </a>
+}
+                <h5>@data.CourseDuration</h5>
+                @if(!data.IsActiveCourse){
+                <img class="imgInactiveCourses" src="~/Images/PoratalImages/InactiveCourse.jpg" title="Your Course is not yet Active. The course will be Active after ACEP Admin Approval" />
+                }
+
+            </div>
+            <div class="col-md-2">
+                <a asp-controller="Teacher" asp-action="TeacherUpdateCourse" asp-route-CourseId=@data.CourseId><button type="button" class="btn btn-primary btn-lg" style="background-color:cornflowerblue">Update Course</button></a>
+            </div>
+        </div>
+        @*</a>*@
+    }
+
+}
+else
+{
+    Context.Response.Redirect("TeacherAddCourse");
+}

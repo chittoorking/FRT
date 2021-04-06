@@ -1,0 +1,44 @@
+﻿@model ELearningPortalMSAzureV1.ViewModels.TutorialsPageViewModel
+@{
+    ViewData["Title"] = "Tutorials Page";
+    if (Model.Users.UserRole == "Teacher")
+    {
+        Layout = "~/Areas/Teacher/Views/Teacher/_AddTutorialLayout.cshtml";
+    }
+    else if (Model.Users.UserRole == "Admin")
+    {
+        Layout = "~/Areas/Admin/Views/Admin/_AdminCourseManagementLayout.cshtml";
+    }
+}
+
+
+
+<div class="col-md-9">
+    @if (Model.TutorialFiles.Count > 0)
+    {
+        <h1 style="color:cadetblue">@Model.CurrentCourse.CourseName</h1>
+        @if (Model.CurrentCourse.AverageCourseRating > 0)
+        {
+            <a asp-controller = "@Model.ControllerName" asp-action = "CourseRatings" asp-route-CourseId = "@Model.CurrentCourse.CourseId" >
+            @Html.Partial("_StarRatingBlock", Convert.ToInt32(Model.CurrentCourse.AverageCourseRating))
+            </a >
+        }
+        <table class="table table-striped" border="1">
+            <tbody>
+                @foreach (var data in Model.TutorialFiles)
+                {
+                    <tr>
+                        <td><button class="buttonLookLike-Hyperlink LoadVideoPopupClass" data-toggle="modal" data-id="@data.FileName" data-tutorialname="@data.TutorialName" data-cloudsrc="@data.FileLocation"><h3>@data.TutorialName</h3></button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div>
+            <a asp-controller="Teacher" asp-action="TeacherUploadVideo" style="color:blue; font-size:18px"><h1>No Videos Uploaded. Click to Upload Tutorial Files</h1></a>
+        </div>
+    }
+</div>
+@Html.Partial("~/Views/Shared/ModalPopups/_PlayVideoModal.cshtml")

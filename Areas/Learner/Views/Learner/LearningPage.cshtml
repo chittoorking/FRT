@@ -1,0 +1,24 @@
+﻿@model ELearningPortalMSAzureV1.Areas.Learner.ViewModels.LearningPageViewModel
+
+@{
+    ViewData["Title"] = "Learning Page";
+    Layout = "_LearnerCourseLayout.cshtml";
+}
+
+
+<div class="col-md-9">
+    <h1 style="color:cadetblue">@Model.CurrentCourse.CourseName</h1>
+    @Html.Partial("_StarRatingBlock", 4) 
+    <a asp-controller="Learner" asp-action="LearnerRatingForm" asp-route-CourseId=@Model.CurrentCourse.CourseId style="color:#FFA500"><h5>Rate This Course</h5></a>
+        <table class="table table-striped" border="1">
+            <tbody>
+                @foreach (var data in Model.TutorialFiles)
+                {
+                    <tr>
+                        <td><button class="buttonLookLike-Hyperlink LoadVideoPopupClass" data-toggle="modal" data-id="@data.FileName" data-tutorialname="@data.TutorialName" data-cloudsrc="@data.FileLocation" ><h3>@data.TutorialName</h3></button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+</div>
+@Html.Partial("~/Views/Shared/ModalPopups/_PlayVideoModal.cshtml")

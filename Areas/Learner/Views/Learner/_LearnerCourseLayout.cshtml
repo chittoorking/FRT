@@ -1,0 +1,9 @@
+﻿@{
+    Layout = "~/Views/Shared/_LearnerLayout.cshtml";
+}
+
+@Html.Partial("_CommonLeftPanel",new List<string> { "Learner|Courses|Your Courses", "Learner|CancelEnrollment|Cancel Enrollment", "Learner|FindCourses|Find Courses" })
+
+<div class="RenderDivHavingLeftPanel">
+    @RenderBody()
+</div>

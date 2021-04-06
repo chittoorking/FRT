@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "AddTutorial";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+@Html.Partial("_CommonLeftPanel", new List<string> { "Teacher|AddTutorial|Your Uploaded Courses", "Teacher|TeacherAddCourse|Add Course", "Teacher|TeacherUploadVideo|Upload Videos" })
+
+<div class="RenderDivHavingLeftPanel">
+    @RenderBody()
+</div>
+

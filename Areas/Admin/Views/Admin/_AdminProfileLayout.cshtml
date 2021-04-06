@@ -1,0 +1,10 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@Html.Partial("_CommonLeftPanel", new List<string> { "Admin|Profile|Profile", "Admin|EditProfile|Edit Profile", "Admin|EditPhoto|Edit Photo", "Admin|ChangePassword|Change Password" })
+
+<div class="RenderDivHavingLeftPanel">
+    @RenderBody()
+</div>
