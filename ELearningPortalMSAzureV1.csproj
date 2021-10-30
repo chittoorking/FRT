@@ -26,6 +26,7 @@
   <ItemGroup>
     <Folder Include="Areas\Guest\Controllers\" />
     <Folder Include="Areas\Guest\Views\" />
+    <Folder Include="AllDatabaseTablesAndSPs\" />
     <Folder Include="wwwroot\Images\UserImage\" />
     <Folder Include="wwwroot\UploadedFiles\" />
   </ItemGroup>
